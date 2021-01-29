@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+.link {
+  text-decoration: none;
+}
+.list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+.page {
+  margin: 0;
+
+  font-family: DM Sans, Titan One;
+  letter-spacing: 0.04em;
+  background-color: #ffffff;
+}
