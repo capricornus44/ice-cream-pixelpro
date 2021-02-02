@@ -1,28 +1,13 @@
 $(function () {
   $('.review-slider').slick({
     dots: true,
+    speed: 700,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    vertical: true,
+    verticalSwiping: true,
+    pauseOnHover: true,
+    pauseOnFocus: false,
+    pauseOnDotsHover: true,
   });
 });
-
-// $('.review-slider').slick({
-//   arrows: true,
-//   dots: true,
-//   slidesToShow: 3,
-//   autoplay: true,
-//   speed: 1000,
-//   autoplaySpeed: 800,
-//   responsive: [
-//     {
-//       breakpoint: 768,
-//       settings: {
-//         slidesToShow: 2,
-//       },
-//     },
-//     {
-//       breakpoint: 550,
-//       settings: {
-//         slidesToShow: 1,
-//       },
-//     },
-//   ],
-// });
