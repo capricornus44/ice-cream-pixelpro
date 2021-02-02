@@ -2,7 +2,7 @@ $(function () {
   $('.review-slider').slick({
     dots: true,
     speed: 700,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000,
     vertical: true,
     verticalSwiping: true,

@@ -1,5 +1,3 @@
-// // ---------- 🏁 ВРЕМЕННЫЕ СТИЛИ ----------
-
 // ========== 📌 СЕКЦИЯ GALLERY ==========
 
 .gallery-section {
@@ -84,6 +82,16 @@
 .review-slider {
   position: relative;
 
+  margin: 0 auto;
+
+  @include for-size(tablet) {
+    width: 620px;
+  }
+
+  @include for-size(desktop) {
+    width: 926px;
+  }
+
   .slick-arrow {
     position: absolute;
     top: 50%;
@@ -131,12 +139,16 @@
   .slick-dots {
     display: flex;
     justify-content: center;
-    margin: 0;
+    margin: 30px 0 0;
     padding: 0;
 
     list-style: none;
 
     font-size: 0;
+
+    @include for-size(tablet) {
+      margin-top: 35px;
+    }
 
     > li {
       width: 12px;
@@ -169,6 +181,8 @@
   }
 }
 
+// ---------- 🏁 ВНУТРЕННИЕ ЭЛЕМЕНТЫ ----------
+
 .review-slide {
   display: flex;
   flex-direction: column;
@@ -190,24 +204,18 @@
 }
 
 .review-slide-bg {
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
-  padding: 43px 0 26px;
+  padding: 43px 50px 26px;
   margin-bottom: 30px;
 
   background-color: #fafafa;
 
   @include for-size(tablet) {
-    width: 620px;
-    padding: 47px 0 34px;
+    padding: 47px 60px 34px;
     margin-bottom: 24px;
   }
 
   @include for-size(desktop) {
-    width: 926px;
-    padding: 47px 0 39px;
+    padding: 47px 58px 39px;
     margin-bottom: 15px;
   }
 }
@@ -216,7 +224,6 @@
   position: relative;
   z-index: 0;
 
-  width: 180px;
   padding: 0 7px;
 
   text-align: center;
@@ -232,14 +239,12 @@
   background-position-y: -1px;
 
   @include for-size(tablet) {
-    width: 500px;
     padding: 0 20px;
 
     font-size: 14px;
   }
 
   @include for-size(desktop) {
-    width: 810px;
     padding: 0 30px;
 
     font-size: 16px;
@@ -315,8 +320,6 @@
 }
 
 .review-slide-name {
-  margin-bottom: 30px;
-
   font-weight: 500;
   font-size: 14px;
   line-height: 1.86;
@@ -324,8 +327,6 @@
   color: $primaryTextColor;
 
   @include for-size(tablet) {
-    margin-bottom: 35px;
-
     font-size: 16px;
   }
 
@@ -333,44 +334,3 @@
     font-size: 20px;
   }
 }
-
-// .review-slide-sign {
-//   position: relative;
-
-//   width: 12px;
-//   height: 12px;
-
-//   border-radius: 50%;
-//   background-color: #d9d9d9;
-
-//   &::before,
-//   &::after {
-//     position: absolute;
-
-//     content: '';
-//     display: inline-block;
-//     width: 12px;
-//     height: 12px;
-
-//     border-radius: 50%;
-//     background-color: #d9d9d9;
-//   }
-
-//   &::before {
-//     transform: translateX(calc(-100% - 18px));
-//   }
-
-//   &::after {
-//     transform: translateX(calc(100% + 18px));
-//   }
-
-//   &.current-sign,
-//   &.current-sign-before::before,
-//   &.current-sign-after::after {
-//     border-radius: 0;
-//     background-color: transparent;
-//     background-image: url('../images/icons/home.svg');
-//     background-size: contain;
-//     background-repeat: no-repeat;
-//   }
-// }
