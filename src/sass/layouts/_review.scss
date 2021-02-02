@@ -94,12 +94,10 @@
 
   .slick-arrow {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 10;
 
-    width: 24px;
-    height: 42px;
+    width: 48px;
+    height: 48px;
 
     border: none;
     outline: none;
@@ -114,13 +112,13 @@
     &.slick-prev {
       left: 0;
 
-      background-image: url('../images/icons/arrowl.svg');
+      background-image: url('../images/icons/arrowsquare.svg');
     }
 
     &.slick-next {
       right: 0;
 
-      background-image: url('../images/icons/arrowr.svg');
+      background-image: url('../images/icons/arrowsquare.svg');
     }
 
     &:hover {
@@ -323,7 +321,6 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 1.86;
-  text-align: center;
   color: $primaryTextColor;
 
   @include for-size(tablet) {
