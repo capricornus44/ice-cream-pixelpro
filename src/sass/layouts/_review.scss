@@ -80,15 +80,52 @@
 }
 
 // ---------- 🏁 СЛАЙДЕР ----------
+.review-slider {
+  position: relative;
 
-.review-slide {
-  display: none;
-  flex-direction: column;
-  align-items: center;
+  & .slick-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 10;
 
-  &.current-slide {
+    width: 24px;
+    height: 42px;
+
+    border: none;
+    outline: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    font-size: 0;
+  }
+
+  & .slick-prev {
+    left: 0;
+
+    background-image: url('../images/icons/arrowl.svg');
+  }
+
+  & .slick-next {
+    right: 0;
+
+    background-image: url('../images/icons/arrowr.svg');
+  }
+
+  & .slick-list {
+    overflow: hidden;
+  }
+
+  & .slick-track {
     display: flex;
   }
+}
+
+.review-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .review-slide-foto {
@@ -229,8 +266,6 @@
 }
 
 .review-slide-name {
-  margin-bottom: 30px;
-
   font-weight: 500;
   font-size: 14px;
   line-height: 1.86;
@@ -238,8 +273,6 @@
   color: $primaryTextColor;
 
   @include for-size(tablet) {
-    margin-bottom: 35px;
-
     font-size: 16px;
   }
 
@@ -248,43 +281,43 @@
   }
 }
 
-.review-slide-sign {
-  position: relative;
+// .review-slide-sign {
+//   position: relative;
 
-  width: 12px;
-  height: 12px;
+//   width: 12px;
+//   height: 12px;
 
-  border-radius: 50%;
-  background-color: #d9d9d9;
+//   border-radius: 50%;
+//   background-color: #d9d9d9;
 
-  &::before,
-  &::after {
-    position: absolute;
+//   &::before,
+//   &::after {
+//     position: absolute;
 
-    content: '';
-    display: inline-block;
-    width: 12px;
-    height: 12px;
+//     content: '';
+//     display: inline-block;
+//     width: 12px;
+//     height: 12px;
 
-    border-radius: 50%;
-    background-color: #d9d9d9;
-  }
+//     border-radius: 50%;
+//     background-color: #d9d9d9;
+//   }
 
-  &::before {
-    transform: translateX(calc(-100% - 18px));
-  }
+//   &::before {
+//     transform: translateX(calc(-100% - 18px));
+//   }
 
-  &::after {
-    transform: translateX(calc(100% + 18px));
-  }
+//   &::after {
+//     transform: translateX(calc(100% + 18px));
+//   }
 
-  &.current-sign,
-  &.current-sign-before::before,
-  &.current-sign-after::after {
-    border-radius: 0;
-    background-color: transparent;
-    background-image: url('../images/icons/home.svg');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
-}
+//   &.current-sign,
+//   &.current-sign-before::before,
+//   &.current-sign-after::after {
+//     border-radius: 0;
+//     background-color: transparent;
+//     background-image: url('../images/icons/home.svg');
+//     background-size: contain;
+//     background-repeat: no-repeat;
+//   }
+// }
