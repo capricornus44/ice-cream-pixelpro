@@ -237,19 +237,22 @@
   }
 }
 
-.hero-btn-left {
+.hero-btn-products {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 62px;
   height: 24px;
-  border: transparent;
   border-radius: 20px;
   margin: 0;
   padding: 0;
   background-color: $titleTextColor;
-  color: $primaryWhiteColor;
 
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 8px;
   line-height: 1.25;
+  color: $primaryWhiteColor;
 
   @include for-size(desktop) {
     width: 102px;
@@ -259,20 +262,24 @@
     line-height: 1.2857;
 
     &:hover {
-      background-color: #c7133e;
+      background-color: $BtnBgHover;
+      transform: scale(1.1);
     }
   }
 }
 
-.hero-btn-right {
+.hero-btn-made {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
   width: 83px;
   height: 24px;
-  border: transparent;
   border-radius: 20px;
   margin: 0;
   padding: 0;
   background-color: $primaryWhiteColor;
 
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   font-size: 8px;
   line-height: 1.25;
@@ -286,7 +293,8 @@
     line-height: 1.2857;
 
     &:hover {
-      background-color: #ecebeb;
+      background-color: $BtnSecBgHover;
+      transform: scale(1.1);
     }
   }
 }
@@ -425,7 +433,7 @@
   }
 }
 
-.next-btn {
+.hero-next-btn {
   width: 18px;
   height: 18px;
   margin: 0;
@@ -433,7 +441,7 @@
   background-color: transparent;
   border: none;
   border-radius: 50%;
-  background-image: url('../images/icons/arrow-right.svg');
+  background-image: url('../images/icons/arrow-right.png');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -441,5 +449,17 @@
   @include for-size(desktop) {
     width: 26px;
     height: 26px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media screen and (min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero-next-btn {
+    background-image: url('../images/icons/arrow-right@2x.png');
   }
 }
