@@ -1,22 +1,23 @@
 .footer {
   background-color: $secondaryBgColor;
-  padding-left: 20px;
-  padding-right: 20px;
+  // padding-left: 20px;
+  // padding-right: 20px;
   margin: auto;
 
-  @include for-size(tablet) {
-    padding-left: 34px;
-    padding-right: 34px;
-  }
-  @include for-size(desktop) {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
+  // @include for-size(tablet) {
+  //   // padding-left: 34px;
+  //   padding-right: 34px;
+  // }
+  // @include for-size(desktop) {
+  //   // padding-left: 50px;
+  //   padding-right: 50px;
+  // }
 }
 
-.footer-posishon {
+.container-footer {
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
+  align-items: center;
 
   @include for-size(tablet) {
     display: flex;
@@ -45,14 +46,6 @@
   list-style: none;
   display: inline-flex;
 }
-.socials-link {
-  text-decoration: none;
-  background-color: #fff;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 .footer-text {
   display: block;
@@ -72,23 +65,57 @@
   width: 32px;
   height: 32px;
   margin-left: 28px;
+  list-style: none;
 
   &:first-child {
     margin-left: 0;
   }
 }
+.socials-link {
+  text-decoration: none;
+  background-color: #fea5bb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  position: relative;
+  transition: all 500ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: #d41443;
+  }
+}
 
 .socials-icon {
   position: absolute;
-  fill: $primaryWhiteColor;
-  width: 32px;
-  height: 32px;
-  background-color: $subtitleTextColor;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   display: flex;
   justify-content: right;
   align-items: center;
+  left: 6px;
+  top: 6px;
+  transition: all 500ms linear;
+  transition-property: transform;
+  &:hover,
+  &:focus {
+    background-color: #d41443;
+    transform: scale(1.6);
+  }
 }
+
+// .socials-link:hover .socials-icon,
+// .socials-link:focus .socials-icon {
+//   background-color: #d41443;
+// }
+// .socials-icon:focus,
+// .socials-icon:hover {
+//   background-color: #d41443;
+// }
 
 .footer-tel {
   font-family: DM Sans;
@@ -99,6 +126,7 @@
   text-align: right;
   color: #000000;
   padding-bottom: 43px;
+  border-bottom: 1px solid #ececec;
 }
 .footer-tel-span {
   color: #d41443;
@@ -123,4 +151,8 @@
     padding-top: 9px;
     padding-bottom: 10px;
   }
+}
+.copy {
+  display: block;
+  letter-spacing: normal;
 }
