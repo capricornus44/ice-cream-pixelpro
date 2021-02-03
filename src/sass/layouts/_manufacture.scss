@@ -34,12 +34,14 @@
     }
   }
   .subtitle {
+    display: block;
     margin-bottom: 15px;
   }
 
   .title {
     margin-bottom: 26px;
     margin-left: (59px -20px);
+    display: block;
   }
 }
 .content-manufacture {
@@ -115,7 +117,7 @@
   margin-bottom: 39px;
   margin-left: 0;
   font-weight: 700;
- 
+
   &::after {
     content: '';
     width: 5px;
@@ -126,7 +128,7 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
-    @include for-size(tablet) {
+  @include for-size(tablet) {
     font-size: 16px;
     line-height: 1.312;
     margin-right: 25%;
