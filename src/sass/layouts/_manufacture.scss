@@ -96,14 +96,38 @@
   padding-left: (51px -20px);
   padding-right: (51px -20px);
 
-  margin-bottom: 47px;
+  margin-bottom: 20px;
   @include for-size(tablet) {
     font-size: 14px;
     line-height: 1.76;
+    margin-bottom: 25px;
   }
   @include for-size(desktop) {
     font-size: 14px;
     line-height: 1.94;
+    margin-bottom: 40px;
+  }
+}
+.last-text-manufacture {
+  font-family: 'DM Sans' sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.62;
+
+  color: $secondaryTextColor;
+  padding-left: (51px -20px);
+  padding-right: (51px -20px);
+
+  margin-bottom: 27px;
+  @include for-size(tablet) {
+    font-size: 14px;
+    line-height: 1.76;
+    margin-bottom: 62px;
+  }
+  @include for-size(desktop) {
+    font-size: 14px;
+    line-height: 1.94;
+    margin-bottom: 45px;
   }
 }
 .button-secondary {
