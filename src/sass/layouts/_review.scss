@@ -180,6 +180,10 @@
       background-size: contain;
       background-repeat: no-repeat;
     }
+
+    > li:not(.slick-active) > button:hover {
+      background-color: rgb(199, 19, 62, 0.2);
+    }
   }
 }
 
