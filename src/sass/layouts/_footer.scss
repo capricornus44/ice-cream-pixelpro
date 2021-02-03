@@ -90,10 +90,8 @@
 
 .socials-icon {
   position: absolute;
-  // fill: $primaryWhiteColor;
   width: 20px;
   height: 20px;
-  // background-color: $subtitleTextColor;
   border-radius: 50%;
   display: flex;
   justify-content: right;
@@ -101,17 +99,22 @@
   left: 6px;
   top: 6px;
   transition: all 500ms linear;
+  transition-property: transform;
+  &:hover,
+  &:focus {
+    background-color: #d41443;
+    transform: scale(1.6);
+  }
 }
 
 // .socials-link:hover .socials-icon,
 // .socials-link:focus .socials-icon {
-//   // fill: #d41443;
 //   background-color: #d41443;
 // }
-.socials-icon:focus,
-.socials-icon:hover {
-  background-color: #d41443;
-}
+// .socials-icon:focus,
+// .socials-icon:hover {
+//   background-color: #d41443;
+// }
 
 .footer-tel {
   font-family: DM Sans;
