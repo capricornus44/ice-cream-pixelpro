@@ -117,83 +117,21 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
-
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+})({"js/modal-map.js":[function(require,module,exports) {
+(function () {
+  var refs = {
+    openModalBtn: document.querySelector('[data-modal-map-open]'),
+    closeModalBtn: document.querySelector('[data-modal-map-close]'),
+    modal: document.querySelector('[data-modal-map]')
   };
+  refs.openModalBtn.addEventListener('click', toggleModal);
+  refs.closeModalBtn.addEventListener('click', toggleModal);
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
+  function toggleModal() {
+    refs.modal.classList.toggle('is-hidden');
   }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\icons\\arrow-half-wite.svg":[["arrow-half-wite.5e712f5b.svg","images/icons/arrow-half-wite.svg"],"images/icons/arrow-half-wite.svg"],"./..\\images\\icons\\half-arrow-right.svg":[["half-arrow-right.cbb4a0dd.svg","images/icons/half-arrow-right.svg"],"images/icons/half-arrow-right.svg"],"./..\\images\\hero\\slider-pic7-mobile.png":[["slider-pic7-mobile.5d004874.png","images/hero/slider-pic7-mobile.png"],"images/hero/slider-pic7-mobile.png"],"./..\\images\\hero\\ellipse-mobile.png":[["ellipse-mobile.82612833.png","images/hero/ellipse-mobile.png"],"images/hero/ellipse-mobile.png"],"./..\\images\\hero\\slider-pic7-mobile@2x.png":[["slider-pic7-mobile@2x.598e3d1f.png","images/hero/slider-pic7-mobile@2x.png"],"images/hero/slider-pic7-mobile@2x.png"],"./..\\images\\hero\\ellipse-mobile@2x.png":[["ellipse-mobile@2x.8a95fe06.png","images/hero/ellipse-mobile@2x.png"],"images/hero/ellipse-mobile@2x.png"],"./..\\images\\hero\\slider-pic7-tablet.png":[["slider-pic7-tablet.db5c8d7a.png","images/hero/slider-pic7-tablet.png"],"images/hero/slider-pic7-tablet.png"],"./..\\images\\hero\\ellipse-tablet.png":[["ellipse-tablet.83b25ccc.png","images/hero/ellipse-tablet.png"],"images/hero/ellipse-tablet.png"],"./..\\images\\hero\\slider-pic7-tablet@2x.png":[["slider-pic7-tablet@2x.1a82d800.png","images/hero/slider-pic7-tablet@2x.png"],"images/hero/slider-pic7-tablet@2x.png"],"./..\\images\\hero\\ellipse-tablet@2x.png":[["ellipse-tablet@2x.a103ecaf.png","images/hero/ellipse-tablet@2x.png"],"images/hero/ellipse-tablet@2x.png"],"./..\\images\\hero\\slider-pic5-tablet.png":[["slider-pic5-tablet.63f0e366.png","images/hero/slider-pic5-tablet.png"],"images/hero/slider-pic5-tablet.png"],"./..\\images\\hero\\slider-pic5-tablet@2x.png":[["slider-pic5-tablet@2x.d030248d.png","images/hero/slider-pic5-tablet@2x.png"],"images/hero/slider-pic5-tablet@2x.png"],"./..\\images\\hero\\slider-pic4-tablet.png":[["slider-pic4-tablet.6d79f3fd.png","images/hero/slider-pic4-tablet.png"],"images/hero/slider-pic4-tablet.png"],"./..\\images\\hero\\slider-pic4-tablet@2x.png":[["slider-pic4-tablet@2x.726f9fe1.png","images/hero/slider-pic4-tablet@2x.png"],"images/hero/slider-pic4-tablet@2x.png"],"./..\\images\\hero\\slider-pic7-desktop.png":[["slider-pic7-desktop.1e13540e.png","images/hero/slider-pic7-desktop.png"],"images/hero/slider-pic7-desktop.png"],"./..\\images\\hero\\ellipse-desktop.png":[["ellipse-desktop.548edcaf.png","images/hero/ellipse-desktop.png"],"images/hero/ellipse-desktop.png"],"./..\\images\\hero\\slider-pic7-desktop@2x.png":[["slider-pic7-desktop@2x.79266187.png","images/hero/slider-pic7-desktop@2x.png"],"images/hero/slider-pic7-desktop@2x.png"],"./..\\images\\hero\\ellipse-desktop@2x.png":[["ellipse-desktop@2x.a32c28a8.png","images/hero/ellipse-desktop@2x.png"],"images/hero/ellipse-desktop@2x.png"],"./..\\images\\hero\\slider-pic5-desktop.png":[["slider-pic5-desktop.7b54f216.png","images/hero/slider-pic5-desktop.png"],"images/hero/slider-pic5-desktop.png"],"./..\\images\\hero\\slider-pic5-desktop@2x.png":[["slider-pic5-desktop@2x.1cb0712b.png","images/hero/slider-pic5-desktop@2x.png"],"images/hero/slider-pic5-desktop@2x.png"],"./..\\images\\hero\\slider-pic4-desktop.png":[["slider-pic4-desktop.b091b645.png","images/hero/slider-pic4-desktop.png"],"images/hero/slider-pic4-desktop.png"],"./..\\images\\hero\\slider-pic4-desktop@2x.png":[["slider-pic4-desktop@2x.60bf4400.png","images/hero/slider-pic4-desktop@2x.png"],"images/hero/slider-pic4-desktop@2x.png"],"./..\\images\\icons\\arrow-right.svg":[["arrow-right.776cb8d4.svg","images/icons/arrow-right.svg"],"images/icons/arrow-right.svg"],"./..\\images\\products\\home-pic1-mobile.png":[["home-pic1-mobile.3a89392a.png","images/products/home-pic1-mobile.png"],"images/products/home-pic1-mobile.png"],"./..\\images\\products\\home-pic1-tablet.png":[["home-pic1-tablet.8614c1e1.png","images/products/home-pic1-tablet.png"],"images/products/home-pic1-tablet.png"],"./..\\images\\products\\home-pic1-desktop.png":[["home-pic1-desktop.36a1be94.png","images/products/home-pic1-desktop.png"],"images/products/home-pic1-desktop.png"],"./..\\images\\products\\home-pic2-mobile.png":[["home-pic2-mobile.e781c29c.png","images/products/home-pic2-mobile.png"],"images/products/home-pic2-mobile.png"],"./..\\images\\products\\home-pic2-tablet.png":[["home-pic2-tablet.3ad815da.png","images/products/home-pic2-tablet.png"],"images/products/home-pic2-tablet.png"],"./..\\images\\products\\home-pic2-desktop.png":[["home-pic2-desktop.23214a09.png","images/products/home-pic2-desktop.png"],"images/products/home-pic2-desktop.png"],"./..\\images\\products\\home-pic3-mobile.png":[["home-pic3-mobile.a33881be.png","images/products/home-pic3-mobile.png"],"images/products/home-pic3-mobile.png"],"./..\\images\\products\\home-pic3-tablet.png":[["home-pic3-tablet.5aea7708.png","images/products/home-pic3-tablet.png"],"images/products/home-pic3-tablet.png"],"./..\\images\\products\\home-pic3-desktop.png":[["home-pic3-desktop.6b6ff4cd.png","images/products/home-pic3-desktop.png"],"images/products/home-pic3-desktop.png"],"./..\\images\\manufacture\\sectionbg1-mobile.png":[["sectionbg1-mobile.7c2cdf6b.png","images/manufacture/sectionbg1-mobile.png"],"images/manufacture/sectionbg1-mobile.png"],"./..\\images\\manufacture\\sectionbg1-mobile@2x.png":[["sectionbg1-mobile@2x.18f49684.png","images/manufacture/sectionbg1-mobile@2x.png"],"images/manufacture/sectionbg1-mobile@2x.png"],"./..\\images\\manufacture\\sectionbg1-desktop.png":[["sectionbg1-desktop.98b5fea1.png","images/manufacture/sectionbg1-desktop.png"],"images/manufacture/sectionbg1-desktop.png"],"./..\\images\\manufacture\\sectionbg1-desktop@2x.png":[["sectionbg1-desktop@2x.39289c3e.png","images/manufacture/sectionbg1-desktop@2x.png"],"images/manufacture/sectionbg1-desktop@2x.png"],"./..\\images\\icons\\milk.svg":[["milk.f8f2c7e9.svg","images/icons/milk.svg"],"images/icons/milk.svg"],"./..\\images\\icons\\apple.svg":[["apple.3b10bd52.svg","images/icons/apple.svg"],"images/icons/apple.svg"],"./..\\images\\icons\\lollipop.svg":[["lollipop.eb45a5fb.svg","images/icons/lollipop.svg"],"images/icons/lollipop.svg"],"./..\\images\\icons\\arrowsquare.svg":[["arrowsquare.1668d77b.svg","images/icons/arrowsquare.svg"],"images/icons/arrowsquare.svg"],"./..\\images\\icons\\home.svg":[["home.6770a1b9.svg","images/icons/home.svg"],"images/icons/home.svg"],"./..\\images\\icons\\brackets.svg":[["brackets.adba9281.svg","images/icons/brackets.svg"],"images/icons/brackets.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +335,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/modal-map.js"], null)
+//# sourceMappingURL=/modal-map.2902f556.js.map
