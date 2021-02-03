@@ -1,7 +1,7 @@
 // ========== 📌 СЕКЦИЯ GALLERY ==========
 
 .gallery-section {
-  background-image: linear-gradient($secondaryBgColor 0% 100%);
+  background-image: linear-gradient($secondaryBgColor, $secondaryBgColor);
   background-size: 100% 39.75%;
   background-repeat: no-repeat;
 }
@@ -189,6 +189,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 1px;
 
   outline: none;
 }
@@ -235,10 +236,14 @@
   color: $primaryTextColor;
 
   background-image: repeating-linear-gradient(
-    #e1e1e1 0px 1px,
-    transparent 1px 30px
+    0deg,
+    #e1e1e1,
+    #e1e1e1 1px,
+    transparent 1px,
+    transparent 30px
   );
   background-position-y: -1px;
+  background-repeat: no-repeat;
 
   @include for-size(tablet) {
     padding: 0 20px;
