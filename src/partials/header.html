@@ -33,7 +33,11 @@
         </svg>
       </button>
 
-      <button class="navigation-btn button-secondary" type="button" data-order-open>
+      <button
+        class="navigation-btn button-secondary"
+        type="button"
+        data-order-open
+      >
         Buy now
         <svg class="navigation-btn-icon" width="16" height="8">
           <use
@@ -44,87 +48,144 @@
     </div>
 
     <!-- MODAL -->
-    <div class="backdrop is-hidden" data-order-modal>
+    <div class="backdrop is-hidden" data-order-modal data-touch-close>
       <div class="modal">
-        <button type="button" class="menu-close-btn order-close-btn" data-order-close>
+        <button
+          type="button"
+          class="menu-close-btn order-close-btn"
+          data-order-close
+        >
           <svg class="icon-close" width="14" height="14">
             <use href="./images/icons/symbol-defs.svg#icon-close"></use>
           </svg>
         </button>
 
-        <!-- MODAL FORM -->
-        <form
-          class="order-form"
-          name="signup_form"
-          autocomplete="on"
-          novalidate
-        >
-          <div class="form-group" role="group" aria-labelby="delivery-head">
-            <p class="form-group-title" id="delivery-head">Delivery option</p>
-            <label class="delivery-label delivery-label-tab">
-              <input class="delivery-input" type="radio" name="delivery" value="courier" checked />
-              Courier (home delivery, only in Kyiv and the Kyiv region)
-            </label>
-            <label class="delivery-label-mob">
-              <input class="delivery-input" type="radio" name="delivery" value="courier" checked />
-              Courier
-            </label>
-            <label class="delivery-label">
-              <input class="delivery-input" type="radio" name="delivery" value="self-selection" />
-              Self-selection
-            </label>
-          </div>
-
-          <div class="form-group info-group" role="group" aria-labelby="info-head">
-            <p class="form-group-title" id="info-head">Personal information</p>
-            <label class="info-label info-name">
-              Name
-              <input type="text" name="username" minlength="2" required />
-            </label class="info-label">
-            <label class="info-label info-phone">
-              Phone
+        <form class="form-order">
+          <div class="form-container">
+            <div class="info-box">
+              <h3 class="info-title">Billing Address</h3>
+              <label class="label" for="name">Full name</label>
               <input
-                type="tel"
-                name="tel"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-                required
+                class="input"
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Anton Zavalniuk"
               />
-            </label>
-            <label class="info-label info-email">
-              Email
-              <input type="email" name="email" required />
-            </label>
-            <label class="info-label info-city">
-              City
-              <input type="text" name="city" required />
-            </label>
-            <label class="info-label info-street">
-              Street
-              <input type="text" name="street" required />
-            </label>
-            <label class="info-label info-house">
-              House
-              <input type="number" name="house" required />
-            </label>
-            <label class="info-label info-apt">
-              Apt
-              <input type="number" name="apartment" required />
-            </label>
-          </div>
+              <label class="label" for="email">Email</label>
+              <input
+                class="input"
+                type="email"
+                id="email"
+                name="email"
+                placeholder="anton@example.com"
+              />
+              <label class="label" for="address">Address</label>
+              <input
+                class="input"
+                type="text"
+                id="address"
+                name="address"
+                placeholder="apt. 4, Pomorska street 9"
+              />
+              <label class="label" for="city">City</label>
+              <input
+                class="input"
+                type="text"
+                id="city"
+                name="city"
+                placeholder="Gdynia"
+              />
 
-          <div class="form-group payment-group" role="group" aria-labelby="payment-head">
-            <p class="form-group-title" id="payment-head">Payment option</p>
-            <label class="payment-label">
-              <input type="radio" name="payment" value="cash" checked />
-              Cash
-            </label>
-            <label class="payment-label">
-              <input type="radio" name="payment" value="Online payment" />
-              Online payment
-            </label>
-          </div>
+              <div class="state-box">
+                <div class="state-box-left">
+                  <label class="label" for="state">State</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="state"
+                    name="state"
+                    placeholder="Poland"
+                  />
+                </div>
+                <div class="state-box-right">
+                  <label class="label" for="index">Post index</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="index"
+                    name="index"
+                    placeholder="81-314"
+                  />
+                </div>
+              </div>
+            </div>
 
-          <button class="order-form-btn" type="submit">Order</button>
+            <div class="payment-box">
+              <h3 class="payment-title">Payment</h3>
+              <label class="label" for="card">Accepted Cards</label>
+              <div class="icon-container" id="card">
+                <ul class="paycard-list list">
+                  <li class="paycard-item">
+                    <button class="visa-btn paycard-btn"></button>
+                  </li>
+                  <li class="paycard-item">
+                    <button class="mastercard-btn paycard-btn"></button>
+                  </li>
+                  <li class="paycard-item">
+                    <button class="mir-btn paycard-btn"></button>
+                  </li>
+                </ul>
+              </div>
+              <label class="label" for="cardName">Name on Card</label>
+              <input
+                class="input"
+                type="text"
+                id="cardName"
+                name="cardName"
+                placeholder="Anton Zavalniuk"
+              />
+              <label class="label" for="cardNumber">Credit card number</label>
+              <input
+                class="input"
+                type="text"
+                id="cardNumber"
+                name="cardnumber"
+                placeholder="1111-2222-3333-4444"
+              />
+              <label class="label" for="expMonth">Expire Month</label>
+              <input
+                class="input"
+                type="text"
+                id="expMonth"
+                name="expMonth"
+                placeholder="January"
+              />
+              <div class="card-box">
+                <div class="expire">
+                  <label class="label" for="expYear">Exp Year</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="expYear"
+                    name="expYear"
+                    placeholder="2022"
+                  />
+                </div>
+                <div class="cvv">
+                  <label class="label" for="cvv">CVV</label>
+                  <input
+                    class="input"
+                    type="text"
+                    id="cvv"
+                    name="cvv"
+                    placeholder="012"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="form-order-btn" type="submit">Order</button>
         </form>
         <!-- MODAL FORM END -->
       </div>

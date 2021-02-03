@@ -1,133 +1,108 @@
-.order-form {
-  @include for-size(desktop) {
-    padding: 20px;
-  }
-}
-
-.form-group {
+.form-container,
+.state-box,
+.card-box {
   display: flex;
-  flex-direction: column;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ecebeb;
-  border-radius: 5px;
-
-  @include for-size(desktop) {
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-}
-
-.form-group-title {
-  display: block;
-  margin-top: 0;
-  margin-bottom: 10px;
-  width: 100%;
-
-  font-weight: 700;
-  font-size: 16px;
-  text-align: center;
-
-  color: $primaryTextColor;
-
-  @include for-size(tablet) {
-    font-size: 15px;
-    margin-bottom: 15px;
-  }
-
-  @include for-size(desktop) {
-    font-size: 20px;
-    margin-bottom: 20px;
-  }
-}
-
-.delivery-label-mob {
-  margin-top: 0;
-  margin-bottom: 10px;
-}
-
-.delivery-label {
-  margin-top: 0;
-  margin-bottom: 0;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  @include for-size(desktop) {
-    margin-bottom: 20px;
-    font-size: 16px;
-  }
-}
-
-.delivery-label-tab {
-  @include for-size(mobile-only) {
-    display: none;
-  }
-}
-
-.delivery-label-mob {
-  @include for-size(tablet) {
-    display: none;
-  }
-}
-
-.info-group {
-  display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
+  margin: 0 -16px;
+
+  @include for-size(mobile-only) {
+    flex-direction: column-reverse;
+  }
 }
 
-.info-label {
-  display: flex;
-  flex-direction: column;
-  margin-top: 0;
+.info-box,
+.payment-box,
+.state-box-left,
+.state-box-right,
+.expire,
+.cvv {
+  flex: 50%;
+  padding: 0 16px;
+}
+
+.info-title,
+.payment-title {
+  margin-bottom: 20px;
+
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.275;
+}
+
+.input {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid $secondaryTextColor;
+  border-radius: 5px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 10px;
 
   font-weight: 400;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.15;
+}
 
+.icon-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 24px;
+}
+
+.paycard-list {
+  display: flex;
+}
+
+.paycard-item {
   &:not(:last-child) {
-    margin-bottom: 10px;
-  }
-
-  @include for-size(tablet) {
-    display: flex;
-    flex-direction: column;
-    margin-top: 0;
-    margin-bottom: 20px;
     margin-right: 20px;
-    font-size: 16px;
   }
 }
 
-.info-name {
-  flex-grow: 2;
+.paycard-btn {
+  display: flex;
+  align-self: flex-start;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  width: 32px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
 }
 
-.info-email {
-  flex-grow: 2;
+.visa-btn {
+  background-image: url(../images/card-icons/visa.svg);
 }
 
-.info-street {
-  flex-grow: 2;
+.mastercard-btn {
+  background-image: url(../images/card-icons/mastercard.svg);
 }
 
-// .info-house {
-//   width: 85px;
-// }
+.mir-btn {
+  background-image: url(../images/card-icons/mir.svg);
+}
 
-// .info-apt {
-//   width: 85px;
-// }
+.form-order-btn {
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $primaryWhiteColor;
+  color: $primaryTextColor;
+  padding: 12px;
+  border: 1px solid $secondaryTextColor;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
 
-.payment-label {
-  margin-top: 0;
-  margin-bottom: 10px;
-
-  font-size: 14px;
-  font-weight: 500;
-
-  @include for-size(desktop) {
-    font-size: 16px;
-  }
+.form-order-btn:hover {
+  background-color: $BtnSecBgHover;
 }
