@@ -80,20 +80,37 @@
   width: 32px;
   height: 32px;
   position: relative;
+  transition: all 500ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: #d41443;
+  }
 }
 
 .socials-icon {
   position: absolute;
-  fill: $primaryWhiteColor;
+  // fill: $primaryWhiteColor;
   width: 20px;
   height: 20px;
-  background-color: $subtitleTextColor;
+  // background-color: $subtitleTextColor;
   border-radius: 50%;
   display: flex;
   justify-content: right;
   align-items: center;
   left: 6px;
   top: 6px;
+  transition: all 500ms linear;
+}
+
+// .socials-link:hover .socials-icon,
+// .socials-link:focus .socials-icon {
+//   // fill: #d41443;
+//   background-color: #d41443;
+// }
+.socials-icon:focus,
+.socials-icon:hover {
+  background-color: #d41443;
 }
 
 .footer-tel {
