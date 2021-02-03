@@ -62,7 +62,7 @@
 .footer-subtitle {
   text-align: left;
 }
-  
+
 .footer-title {
   text-align: left;
 }
@@ -72,12 +72,12 @@
   width: 32px;
   height: 32px;
   margin-left: 28px;
-  
+
   &:first-child {
     margin-left: 0;
   }
 }
-  
+
 .socials-icon {
   position: absolute;
   fill: $primaryWhiteColor;
@@ -123,3 +123,4 @@
     padding-top: 9px;
     padding-bottom: 10px;
   }
+}
