@@ -126,13 +126,42 @@
       </div>
     </div>
   </div>
-  <div class="backdrop-modal-map is-hidden" data-modal-franchise>
-    <div class="map-window">
-      <button class="button-close" data-modal-franchise-close>
-        <svg class="svg-close">
-          <use href="./images/icons/symbol-defs.svg#icon-close"></use>
-        </svg>
-      </button>
+  <div class="backdrop-modal-franchise is-hidden" data-modal-franchise>
+    <div class="franchise-window">
+       <button class="button-close" data-modal-franchise-close>
+          <svg class="svg-close">
+            <use href="./images/icons/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+
+        <form action="form" class="franchise-form">
+
+          <p class="title">Leave your contacts, we will call you back</p>
+
+          <label class="form-field">
+            <span>
+              <imput class="form-field-imput" type="name" name="name" required/>
+            </span>
+          </label>
+
+          <label class="form-field">
+            <span>
+              <imput class="form-field-imput" type+="tel" name="tel" required="">
+            </span>
+          </label>
+
+          <label class="form-field">
+            <span>
+              <imput class="form-field-imput" type+="email" name="email" />
+            </span>
+          </label>
+
+          <label>
+            <textarea class="form-area" name="text" placeholder="Введите текст" placeholder="enter text"></textarea>
+          </label>
+
+        </form>
+      
     </div>
   </div>
 </section>
