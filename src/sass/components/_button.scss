@@ -9,8 +9,15 @@
   text-align: center;
 
   color: $primaryWhiteColor;
+  background-color: $titleTextColor;
   border-radius: 22px;
   border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $BtnBgHover;
+    transform: scale(1.1);
+  }
 
   &.button-location {
     display: flex;
@@ -19,7 +26,7 @@
     margin-bottom: 10px;
     width: 181px;
 
-    background-color: #d41342;
+    // background-color: $titleTextColor;
 
     &::after {
       content: '';
@@ -37,15 +44,6 @@
       margin-right: 15px;
     }
   }
-
-  &.button-products {
-    width: 62px;
-    height: 24px;
-    font-size: 8px;
-    line-height: 1.25;
-
-    background-color: $titleTextColor;
-  }
 }
 
 .button-secondary {
@@ -62,6 +60,12 @@
   background-color: $primaryWhiteColor;
   border-radius: 22px;
   border: none;
+
+  &:hover,
+  &:focus {
+    background-color: $BtnSecBgHover;
+    transform: scale(1.1);
+  }
 
   &.button-Franchise {
     display: flex;
@@ -83,17 +87,6 @@
     @include for-size(tablet) {
       margin-left: 0;
     }
-  }
-
-  &.button-how-it-do {
-    width: 82px;
-    height: 24px;
-    font-size: 8px;
-    line-height: 1.25;
-  }
-
-  &.button-menu {
-    width: 209px;
   }
 
   &.button-milk {
