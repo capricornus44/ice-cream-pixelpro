@@ -166,4 +166,11 @@
 .copy {
   display: block;
   letter-spacing: normal;
+
+  @include for-size(tablet) {
+    display: inline;
+  }
+  @include for-size(desktop) {
+    display: inline;
+  }
 }
