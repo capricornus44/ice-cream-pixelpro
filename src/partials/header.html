@@ -60,17 +60,20 @@
           </svg>
         </button>
 
+        <!-- MODAL FORM -->
         <form class="form-order">
           <div class="form-container">
             <div class="info-box">
               <h3 class="info-title">Billing Address</h3>
-              <label class="label" for="name">Full name</label>
+              <label class="label" for="name">Full Name</label>
               <input
                 class="input"
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Anton Zavalniuk"
+                placeholder="Jan Kowalski"
+                required
+                pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}"
               />
               <label class="label" for="email">Email</label>
               <input
@@ -78,7 +81,9 @@
                 type="email"
                 id="email"
                 name="email"
-                placeholder="anton@example.com"
+                placeholder="kowalski@example.com"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                required
               />
               <label class="label" for="address">Address</label>
               <input
@@ -87,6 +92,7 @@
                 id="address"
                 name="address"
                 placeholder="apt. 4, Pomorska street 9"
+                required
               />
               <label class="label" for="city">City</label>
               <input
@@ -95,6 +101,9 @@
                 id="city"
                 name="city"
                 placeholder="Gdynia"
+                minlength="3"
+                maxlength="50"
+                required
               />
 
               <div class="state-box">
@@ -106,16 +115,21 @@
                     id="state"
                     name="state"
                     placeholder="Poland"
+                    minlength="3"
+                    maxlength="50"
+                    required
                   />
                 </div>
                 <div class="state-box-right">
-                  <label class="label" for="index">Post index</label>
+                  <label class="label" for="index">Index</label>
                   <input
                     class="input"
                     type="text"
                     id="index"
                     name="index"
                     placeholder="81-314"
+                    pattern="[0-9]{2,}[\-][0-9]{3,}"
+                    required
                   />
                 </div>
               </div>
@@ -137,39 +151,37 @@
                   </li>
                 </ul>
               </div>
-              <label class="label" for="cardName">Name on Card</label>
+              <label class="label" for="cardName">Card Holder Name</label>
               <input
                 class="input"
                 type="text"
                 id="cardName"
                 name="cardName"
-                placeholder="Anton Zavalniuk"
+                placeholder="Jan Kowalski"
+                pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}"
+                required
               />
-              <label class="label" for="cardNumber">Credit card number</label>
+              <label class="label" for="cardNumber">Card Number</label>
               <input
                 class="input"
                 type="text"
                 id="cardNumber"
                 name="cardnumber"
                 placeholder="1111-2222-3333-4444"
-              />
-              <label class="label" for="expMonth">Expire Month</label>
-              <input
-                class="input"
-                type="text"
-                id="expMonth"
-                name="expMonth"
-                placeholder="January"
+                pattern="[0-9]{4,}[\-][0-9]{4,}[\-][0-9]{4,}[\-][0-9]{4,}"
+                required
               />
               <div class="card-box">
                 <div class="expire">
-                  <label class="label" for="expYear">Exp Year</label>
+                  <label class="label" for="valid">Valid Thru</label>
                   <input
                     class="input"
                     type="text"
                     id="expYear"
                     name="expYear"
-                    placeholder="2022"
+                    placeholder="10/22"
+                    pattern="[0-9]{2,}\/[0-9]{2,}"
+                    required
                   />
                 </div>
                 <div class="cvv">
@@ -180,6 +192,9 @@
                     id="cvv"
                     name="cvv"
                     placeholder="012"
+                    minlength="3"
+                    maxlength="3"
+                    required
                   />
                 </div>
               </div>
