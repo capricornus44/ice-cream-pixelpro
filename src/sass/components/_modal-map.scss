@@ -1,6 +1,6 @@
 .backdrop-modal-map {
   position: fixed;
-  z-index: 100;
+  z-index: 50;
   top: 0;
   left: 0;
   width: 100%;
@@ -11,54 +11,64 @@
   transition: 500ms;
 }
 .map-window {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 90vw;
-  height: 90vw;
+  padding: 5px;
+  width: 100%;
+  height: 100%;
 
   background-color: $primaryWhiteColor;
   border-radius: 5px;
-  box-shadow: 7px 8px 25px 1px rgba(255, 0, 0, 0.25);
+  box-shadow: 7px 8px 25px 1px rgba(255, 0, 0, 0.44);
 
-  transform: translate(-50%, -50%);
+  .button-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
 
-  @include for-size(tablet) {
-    top: 50%;
-    left: 50%;
-    width: 70vw;
-    height: 40vw;
+    border-radius: 50px;
 
-    box-shadow: 7px 8px 25px 1px rgba(255, 0, 0, 0.44);
+    background-color: $titleTextColor;
+    border-color: $subtitleTextColor;
 
-    transform: translate(-50%, -50%);
+    @include for-size(tablet) {
+      top: 10px;
+      right: 10px;
+    }
+
+    .svg-close {
+      width: 20px;
+      height: 20px;
+
+      cursor: pointer;
+    }
   }
 }
-.button-map-close {
+.substrate {
   position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 25px;
-  height: 25px;
-  padding: 0;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
 
-  border-radius: 50px;
+  background-color: $locationBandcolor;
 
-  background-color: rgba(0, 0, 0, 0.2);
-  border-color: $titleTextColor;
+  transition: 300ms;
+  transform: translate(-50%, -50%);
+  transform-origin: bottom;
 
   @include for-size(tablet) {
-    top: -30px;
-    right: -30px;
-
-    border-color: $mobileMenuColor;
+    width: 78vw;
+    height: 70vh;
   }
-
-  .svg-close-map {
-    width: 20px;
-    height: 20px;
-
-    cursor: pointer;
+  @include for-size(desktop) {
+    width: 75vw;
+    height: 70vh;
   }
 }
 
@@ -66,6 +76,11 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
 
-  transform: perspective(600px) rotateX(45deg);
+.is-hidden .substrate {
+  transform: translate(-50%, -50%);
+  @include for-size(tablet) {
+    transform: rotatex(-65deg) perspective(300px) translate(-50%, -50%);
+  }
 }

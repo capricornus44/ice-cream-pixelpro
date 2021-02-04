@@ -1,0 +1,158 @@
+.backdrop-modal-franchise {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: 500ms;
+}
+.franchise-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 10px;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $locationBandcolor;
+
+  transition: 300ms;
+  transform: translate(-50%, -50%);
+  transform-origin: bottom;
+
+  @include for-size(tablet) {
+    width: 50vw;
+    height: 80vh;
+  }
+
+  .button-close {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+
+    background-color: $titleTextColor;
+    border-color: $subtitleTextColor;
+    border-radius: 50px;
+
+    @include for-size(tablet) {
+      top: 10px;
+      right: 10px;
+    }
+
+    .svg-close {
+      width: 20px;
+      height: 20px;
+
+      cursor: pointer;
+    }
+  }
+}
+.franchise-form {
+  padding-top: 50px;
+  padding-right: 20px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  width: 100%;
+  height: 100%;
+
+  background-color: $secondaryBgColor;
+  box-shadow: 7px 8px 25px 1px rgba(255, 0, 0, 0.44);
+
+  .button-secondary {
+    margin-top: 40px;
+    width: 150px;
+    height: 44px;
+
+    border: 2px;
+  }
+
+  & .title-franchise {
+    margin-bottom: 40px;
+
+    font-family: 'Titan One', cursive;
+    font-weight: 400px;
+    font-size: 23px;
+    line-height: 1.147;
+    text-align: center;
+    text-transform: uppercase;
+    color: $titleTextColor;
+  }
+}
+.form-field {
+  margin-bottom: 10px;
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: $subtitleTextColor;
+
+  & :not(:first-child) {
+    margin-bottom: 20px;
+  }
+  & ::placeholder {
+    font-size: 15px;
+  }
+  & :placeholder-shown {
+    color: $titleTextColor;
+  }
+}
+.form-field-imput {
+  display: block;
+  padding-left: 10px;
+  width: 100%;
+  height: 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid $labelCafecolor;
+  transition: border-color 500ms;
+
+  &:focus {
+    border: 1px solid $subtitleTextColor;
+
+    &:required:valid {
+      border-color: rgba(15, 255, 15, 0.964);
+    }
+    &:valid {
+      border-color: rgba(15, 255, 15, 0.964);
+    }
+  }
+}
+
+.form-area {
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+
+  border: 1px solid $labelCafecolor;
+  border-radius: 4px;
+  outline: none;
+  resize: none;
+
+  transition: border-color 500ms;
+
+  &:focus {
+    border: 1px solid $subtitleTextColor;
+  }
+}
+
+.backdrop-modal-franchise.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.is-hidden .franchise-window {
+  @include for-size(tablet) {
+    transform: rotatex(-65deg) perspective(300px) translate(-50%, -50%);
+  }
+}

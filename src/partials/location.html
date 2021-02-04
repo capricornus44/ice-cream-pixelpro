@@ -97,26 +97,95 @@
       <button class="button button-location" data-modal-map-open>
         Our Locations
       </button>
-      <button class="button-secondary button-Franchise">Franchise</button>
+      <button
+        class="button-secondary button-Franchise"
+        data-modal-franchise-open
+      >
+        Franchise
+      </button>
     </div>
   </div>
   <div class="backdrop-modal-map is-hidden" data-modal-map>
-    <div class="map-window">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.7792674117904!2d30.53619175129494!3d50.42658409686463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d96f5139689b%3A0xa1f7c65300bebad1!2sGoIT!5e0!3m2!1sru!2sua!4v1612276309509!5m2!1sru!2sua"
-        width="100%"
-        height="100%"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen=""
-        aria-hidden="false"
-        tabindex="0"
-      ></iframe>
-      <button class="button-map-close" data-modal-map-close>
-        <svg class="svg-close-map">
+    <div class="substrate">
+      <div class="map-window">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2541.7792674117904!2d30.53619175129494!3d50.42658409686463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d96f5139689b%3A0xa1f7c65300bebad1!2sGoIT!5e0!3m2!1sru!2sua!4v1612276309509!5m2!1sru!2sua"
+          width="100%"
+          height="100%"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+        ></iframe>
+        <button class="button-close" data-modal-map-close>
+          <svg class="svg-close">
+            <use href="./images/icons/symbol-defs.svg#icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="backdrop-modal-franchise is-hidden" data-modal-franchise>
+    <div class="franchise-window">
+      <button class="button-close" data-modal-franchise-close>
+        <svg class="svg-close">
           <use href="./images/icons/symbol-defs.svg#icon-close"></use>
         </svg>
       </button>
+
+      <form action="form" class="franchise-form">
+        <p class="title-franchise">
+          Leave your contacts, we will call you back
+        </p>
+
+        <label class="form-field">
+          <span>name <sup>*</sup></span>
+          <input
+            class="form-field-imput"
+            type="name"
+            name="name"
+            pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}"
+            placeholder="Aleksandr kasian"
+            required
+          />
+        </label>
+
+        <label class="form-field">
+          <span>phone number <sup>*</sup></span>
+          <input
+            class="form-field-imput"
+            type="tel"
+            name="tel"
+            pattern="\d{3}\d{3}\d{2}\d{2}"
+            maxlength="18"
+            placeholder="0503335533"
+            required
+          />
+        </label>
+
+        <label class="form-field">
+          <span>e-mail </span>
+          <input
+            class="form-field-imput"
+            type="email"
+            pattern="[^ @]*@[^ @]*"
+            name="email"
+            placeholder="aleksandrkasian0310@gmail.com"
+          />
+        </label>
+
+        <label class="form-field">
+          <span>comment </span>
+          <textarea
+            class="form-area"
+            name="text"
+            placeholder="enter text"
+          ></textarea>
+        </label>
+
+        <button class="button-secondary" type="submit">send</button>
+      </form>
     </div>
   </div>
 </section>
