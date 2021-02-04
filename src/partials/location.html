@@ -128,40 +128,64 @@
   </div>
   <div class="backdrop-modal-franchise is-hidden" data-modal-franchise>
     <div class="franchise-window">
-       <button class="button-close" data-modal-franchise-close>
-          <svg class="svg-close">
-            <use href="./images/icons/symbol-defs.svg#icon-close"></use>
-          </svg>
-        </button>
+      <button class="button-close" data-modal-franchise-close>
+        <svg class="svg-close">
+          <use href="./images/icons/symbol-defs.svg#icon-close"></use>
+        </svg>
+      </button>
 
-        <form action="form" class="franchise-form">
+      <form action="form" class="franchise-form">
+        <p class="title-franchise">
+          Leave your contacts, we will call you back
+        </p>
 
-          <p class="title">Leave your contacts, we will call you back</p>
+        <label class="form-field">
+          <span>name <sup>*</sup></span>
+          <input
+            class="form-field-imput"
+            type="name"
+            name="name"
+            pattern="[A-Za-z]{2,}\s[A-Za-z]{2,}"
+            placeholder="Aleksandr kasian"
+            required
+          />
+        </label>
 
-          <label class="form-field">
-            <span>
-              <imput class="form-field-imput" type="name" name="name" required/>
-            </span>
-          </label>
+        <label class="form-field">
+          <span>phone number <sup>*</sup></span>
+          <input
+            class="form-field-imput"
+            type="tel"
+            name="tel"
+            pattern="[\+]\d{2}\d{3}\d{3}\d{2}\d{2}"
+            maxlength="18"
+            placeholder="+38(050) 333-33-33"
+            required
+          />
+        </label>
 
-          <label class="form-field">
-            <span>
-              <imput class="form-field-imput" type+="tel" name="tel" required="">
-            </span>
-          </label>
+        <label class="form-field">
+          <span>e-mail </span>
+          <input
+            class="form-field-imput"
+            type="email"
+            pattern="[^ @]*@[^ @]*"
+            name="email"
+            placeholder="aleksandrkasian0310@gmail.com"
+          />
+        </label>
 
-          <label class="form-field">
-            <span>
-              <imput class="form-field-imput" type+="email" name="email" />
-            </span>
-          </label>
+        <label class="form-field">
+          <span>comment </span>
+          <textarea
+            class="form-area"
+            name="text"
+            placeholder="enter text"
+          ></textarea>
+        </label>
 
-          <label>
-            <textarea class="form-area" name="text" placeholder="Введите текст" placeholder="enter text"></textarea>
-          </label>
-
-        </form>
-      
+        <button class="button-secondary" type="submit">send</button>
+      </form>
     </div>
   </div>
 </section>
