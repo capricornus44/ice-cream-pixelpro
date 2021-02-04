@@ -24,7 +24,7 @@
 .payment-title {
   margin-bottom: 20px;
 
-  font-weight: 500;
+  font-weight: 700;
   font-size: 24px;
   line-height: 1.275;
 }
@@ -35,7 +35,7 @@
   margin-bottom: 20px;
   padding: 12px;
   border: 1px solid $secondaryTextColor;
-  border-radius: 5px;
+  border-radius: 10px;
   outline: none;
 
   &:focus {
@@ -62,7 +62,7 @@
   display: block;
   margin-bottom: 10px;
 
-  font-weight: 400;
+  font-weight: 500;
   font-size: 16px;
   line-height: 1.15;
 
