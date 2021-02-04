@@ -104,7 +104,7 @@
 
         text-transform: uppercase;
         color: $primaryWhiteColor;
-        border-radius: 4px;
+        border-radius: 6px;
 
         @include for-size(tablet) {
           display: inline-block;
