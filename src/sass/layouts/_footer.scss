@@ -18,12 +18,15 @@
   justify-content: space-between;
   border-bottom: 1px solid #e1e1e1;
   align-items: center;
+  padding-bottom: 43px;
 
   @include for-size(tablet) {
     display: flex;
+    padding-bottom: 91px;
   }
   @include for-size(desktop) {
     display: flex;
+    padding-bottom: 93px;
   }
 }
 .subtitle {
@@ -39,7 +42,16 @@
 .footer-socials-list {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 46px;
+  margin-bottom: 30px;
+  margin-top: 43px;
+
+  @include for-size(tablet) {
+    margin-bottom: 46px;
+    margin-top: 0;
+  }
+  @include for-size(desktop) {
+    margin-bottom: 50px;
+  }
 }
 
 .footer-list {
@@ -49,7 +61,6 @@
 
 .footer-text {
   display: block;
-  margin-bottom: 43px;
 }
 
 .footer-subtitle {
@@ -81,7 +92,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  transition: all 500ms linear;
+  transition: all 250ms linear;
 
   &:hover,
   &:focus {
@@ -104,18 +115,14 @@
   &:hover,
   &:focus {
     background-color: #d41443;
-    transform: scale(1.6);
   }
 }
 
-// .socials-link:hover .socials-icon,
-// .socials-link:focus .socials-icon {
-//   background-color: #d41443;
-// }
-// .socials-icon:focus,
-// .socials-icon:hover {
-//   background-color: #d41443;
-// }
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  background-color: #d41443;
+  transform: scale(1.2);
+}
 
 .footer-tel {
   font-family: DM Sans;
@@ -125,11 +132,15 @@
   line-height: 1.86;
   text-align: right;
   color: #000000;
-  padding-bottom: 43px;
-  border-bottom: 1px solid #ececec;
 }
+
 .footer-tel-span {
   color: #d41443;
+
+  &:hover,
+  &:focus {
+    color: #d41342;
+  }
 }
 
 .copyright {
@@ -155,4 +166,11 @@
 .copy {
   display: block;
   letter-spacing: normal;
+
+  @include for-size(tablet) {
+    display: inline;
+  }
+  @include for-size(desktop) {
+    display: inline;
+  }
 }
