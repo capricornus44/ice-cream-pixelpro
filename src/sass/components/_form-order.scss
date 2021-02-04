@@ -37,6 +37,17 @@
   border: 1px solid $secondaryTextColor;
   border-radius: 5px;
   outline: none;
+
+  &:focus {
+    border: 2px solid $subtitleTextColor;
+  }
+
+  &:invalid:not(:placeholder-shown) {
+    border-color: #ff0000;
+  }
+  &:valid:not(:placeholder-shown) {
+    border-color: #008000;
+  }
 }
 
 .input::placeholder {
