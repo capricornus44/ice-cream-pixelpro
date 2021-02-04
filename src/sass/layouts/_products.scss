@@ -11,23 +11,35 @@
     padding-top: 127px;
     padding-bottom: 119px;
   }
+
+  .subtitle {
+    display: block;
+    margin-bottom: 15px;
+  }
+
+  .title {
+    display: block;
+  }
 }
 
-.products-subtitle {
-  margin-bottom: 15px;
-}
+// .products-subtitle {
+//   margin-bottom: 15px;
+// }
 
 .products-list {
   position: relative;
   padding-top: 144px;
+  margin-top: 31px;
 
   @include for-size(tablet) {
     display: flex;
     flex-wrap: wrap;
     padding-top: 150px;
+    margin-top: 39px;
   }
   @include for-size(desktop) {
     padding-top: 259px;
+    margin-top: 49px;
   }
 }
 
