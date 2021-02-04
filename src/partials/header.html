@@ -64,12 +64,13 @@
           <div class="form-container">
             <div class="info-box">
               <h3 class="info-title">Billing Address</h3>
-              <label class="label" for="name">Full name</label>
+              <label class="label" for="name">Full Name</label>
               <input
                 class="input"
                 type="text"
                 id="name"
                 name="name"
+                pattern="[A-Za-zА-Яа-яЁё]"
                 placeholder="Jan Kowalski"
               />
               <label class="label" for="email">Email</label>
@@ -137,7 +138,7 @@
                   </li>
                 </ul>
               </div>
-              <label class="label" for="cardName">Name on Card</label>
+              <label class="label" for="cardName">Card Holder Name</label>
               <input
                 class="input"
                 type="text"
@@ -145,7 +146,7 @@
                 name="cardName"
                 placeholder="Jan Kowalski"
               />
-              <label class="label" for="cardNumber">Credit card number</label>
+              <label class="label" for="cardNumber">Card Number</label>
               <input
                 class="input"
                 type="text"
@@ -153,23 +154,23 @@
                 name="cardnumber"
                 placeholder="1111-2222-3333-4444"
               />
-              <label class="label" for="expMonth">Expire Month</label>
+              <!-- <label class="label" for="expMonth">Expire Month</label>
               <input
                 class="input"
                 type="text"
                 id="expMonth"
                 name="expMonth"
                 placeholder="January"
-              />
+              /> -->
               <div class="card-box">
                 <div class="expire">
-                  <label class="label" for="expYear">Exp Year</label>
+                  <label class="label" for="valid">Valid Thru</label>
                   <input
                     class="input"
                     type="text"
                     id="expYear"
                     name="expYear"
-                    placeholder="2022"
+                    placeholder="10/22"
                   />
                 </div>
                 <div class="cvv">
