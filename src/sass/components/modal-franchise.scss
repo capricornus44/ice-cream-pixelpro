@@ -117,7 +117,7 @@
   transition: border-color 500ms;
 
   &:focus {
-    border: 1px solid $mobileMenuColor;
+    border: 1px solid $subtitleTextColor;
 
     &:required:valid {
       border-color: rgba(15, 255, 15, 0.964);
