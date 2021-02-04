@@ -81,7 +81,7 @@
   width: 32px;
   height: 32px;
   position: relative;
-  transition: all 500ms linear;
+  transition: all 250ms linear;
 
   &:hover,
   &:focus {
@@ -104,18 +104,14 @@
   &:hover,
   &:focus {
     background-color: #d41443;
-    transform: scale(1.6);
   }
 }
 
-// .socials-link:hover .socials-icon,
-// .socials-link:focus .socials-icon {
-//   background-color: #d41443;
-// }
-// .socials-icon:focus,
-// .socials-icon:hover {
-//   background-color: #d41443;
-// }
+.socials-link:hover .socials-icon,
+.socials-link:focus .socials-icon {
+  background-color: #d41443;
+  transform: scale(1.2);
+}
 
 .footer-tel {
   font-family: DM Sans;
