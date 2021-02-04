@@ -4,41 +4,51 @@
   background-color: $heroBgColor;
 
   @include for-size(mobile-only) {
-    background-image: url('../images/hero/slider-pic7-mobile.png'),
-      url('../images/hero/ellipse-mobile.png');
-    background-size: 171px 410px, 284px 344px;
-    background-position: top 92px right 32px, top 83px right 0;
+    // background-image: url('../images/hero/slider-pic7-mobile.png'),
+    //   url('../images/hero/ellipse-mobile.png');
+    // background-size: 171px 410px, 284px 344px;
+    // background-position: top 92px right 32px, top 83px right 0;
     background-repeat: no-repeat;
+
+    background-image: url('../images/hero/ellipse-mobile.png');
+    background-size: 284px 344px;
+    background-position: top 83px right 0;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       .hero {
-        background-image: url('../images/hero/slider-pic7-mobile@2x.png'),
-          url('../images/hero/ellipse-mobile@2x.png');
+        // background-image: url('../images/hero/slider-pic7-mobile@2x.png'),
+        //   url('../images/hero/ellipse-mobile@2x.png');
+
+        background-image: url('../images/hero/ellipse-mobile@2x.png');
       }
     }
   }
 }
 
 .hero .container {
-  animation-duration: 0.5s;
-
   position: relative;
   @include for-size(tablet) {
     max-width: 768px;
-    background-image: url('../images/hero/slider-pic7-tablet.png'),
-      url('../images/hero/ellipse-tablet.png');
-    background-size: 143px 336px, 324px 322px;
-    background-position: top 63px right 247px, top 31px right 137px;
+    // background-image: url('../images/hero/slider-pic7-tablet.png'),
+    //   url('../images/hero/ellipse-tablet.png');
+    // background-size: 143px 336px, 324px 322px;
+    // background-position: top 63px right 247px, top 31px right 137px;
     background-repeat: no-repeat;
+
+    background-image: url('../images/hero/ellipse-tablet.png');
+    background-size: 324px 322px;
+    background-position: top 31px right 137px;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       .hero .container {
-        background-image: url('../images/hero/slider-pic7-tablet@2x.png'),
-          url('../images/hero/ellipse-tablet@2x.png');
+        // background-image: url('../images/hero/slider-pic7-tablet@2x.png'),
+        //   url('../images/hero/ellipse-tablet@2x.png');
+
+        background-image: url('../images/hero/ellipse-tablet@2x.png');
       }
     }
 
@@ -89,18 +99,24 @@
 
   @include for-size(desktop) {
     max-width: 1200px;
-    background-image: url('../images/hero/slider-pic7-desktop.png'),
-      url('../images/hero/ellipse-desktop.png');
-    background-size: 236px 557px, 538px 538px;
-    background-position: top 108px right 350px, top 52px right 167px;
+    // background-image: url('../images/hero/slider-pic7-desktop.png'),
+    //   url('../images/hero/ellipse-desktop.png');
+    // background-size: 236px 557px, 538px 538px;
+    // background-position: top 108px right 350px, top 52px right 167px;
     background-repeat: no-repeat;
+
+    background-image: url('../images/hero/ellipse-desktop.png');
+    background-size: 538px 538px;
+    background-position: top 52px right 167px;
 
     @media screen and (min-device-pixel-ratio: 2),
       screen and (min-resolution: 192dpi),
       screen and (min-resolution: 2dppx) {
       .hero .container {
-        background-image: url('../images/hero/slider-pic7-desktop@2x.png'),
-          url('../images/hero/ellipse-desktop@2x.png');
+        // background-image: url('../images/hero/slider-pic7-desktop@2x.png'),
+        //   url('../images/hero/ellipse-desktop@2x.png');
+
+        background-image: url('../images/hero/ellipse-desktop@2x.png');
       }
     }
 
@@ -150,6 +166,62 @@
   }
 }
 
+.hero-ice-cream {
+  position: absolute;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  animation-duration: 0.5s;
+
+  @include for-size(mobile-only) {
+    top: 92px;
+    right: calc((100% - 100vw) / 2 + 32px);
+    width: 171px;
+    height: 410px;
+    background-image: url('../images/hero/slider-pic7-mobile.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/hero/slider-pic7-mobile@2x.png');
+    }
+  }
+
+  @include for-size(tablet) {
+    top: 63px;
+    right: 215px;
+    width: 143px;
+    height: 336px;
+    background-image: url('../images/hero/slider-pic7-tablet.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      .hero .container {
+        background-image: url('../images/hero/slider-pic7-tablet@2x.png');
+      }
+    }
+  }
+
+  @include for-size(desktop) {
+    top: 108px;
+    right: 300px;
+    width: 236px;
+    height: 557px;
+    background-image: url('../images/hero/slider-pic7-desktop.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      .hero .container {
+        background-image: url('../images/hero/slider-pic7-desktop@2x.png');
+      }
+    }
+  }
+}
+
 .hero-inner {
   position: relative;
   display: flex;
@@ -167,6 +239,8 @@
 }
 
 .hero-title-box {
+  z-index: 1;
+
   @include for-size(tablet) {
     position: absolute;
     top: 102px;
@@ -181,8 +255,8 @@
 }
 
 .hero-title {
-  animation-duration: 2s;
-  animation-delay: 1.5s;
+  animation-duration: 1.5s;
+  animation-delay: 0.5s;
 
   width: 218px;
   margin-bottom: 20px;
