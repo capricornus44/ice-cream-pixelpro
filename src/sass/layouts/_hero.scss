@@ -166,62 +166,6 @@
   }
 }
 
-.hero-ice-cream {
-  position: absolute;
-
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  animation-duration: 0.5s;
-
-  @include for-size(mobile-only) {
-    top: 92px;
-    right: calc((100% - 100vw) / 2 + 32px);
-    width: 171px;
-    height: 410px;
-    background-image: url('../images/hero/slider-pic7-mobile.png');
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      background-image: url('../images/hero/slider-pic7-mobile@2x.png');
-    }
-  }
-
-  @include for-size(tablet) {
-    top: 63px;
-    right: 215px;
-    width: 143px;
-    height: 336px;
-    background-image: url('../images/hero/slider-pic7-tablet.png');
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      .hero .container {
-        background-image: url('../images/hero/slider-pic7-tablet@2x.png');
-      }
-    }
-  }
-
-  @include for-size(desktop) {
-    top: 108px;
-    right: 300px;
-    width: 236px;
-    height: 557px;
-    background-image: url('../images/hero/slider-pic7-desktop.png');
-
-    @media screen and (min-device-pixel-ratio: 2),
-      screen and (min-resolution: 192dpi),
-      screen and (min-resolution: 2dppx) {
-      .hero .container {
-        background-image: url('../images/hero/slider-pic7-desktop@2x.png');
-      }
-    }
-  }
-}
-
 .hero-inner {
   position: relative;
   display: flex;
@@ -255,11 +199,11 @@
 }
 
 .hero-title {
-  animation-duration: 1.5s;
-  animation-delay: 0.5s;
-
   width: 218px;
   margin-bottom: 20px;
+
+  animation-duration: 2s;
+  animation-delay: 0.7s;
 
   font-family: 'Titan one', cursive;
   font-size: 26px;
@@ -305,6 +249,9 @@
 }
 
 .hero-btn-item {
+  animation-duration: 0.5s;
+  animation-delay: 0.75s;
+
   &:not(:last-child) {
     margin-right: 8px;
   }
@@ -446,6 +393,9 @@
 }
 
 .quantity {
+  animation-duration: 0.5s;
+  animation-delay: 0.75s;
+
   // position: relative;
   font-family: 'Titan One', cursive;
   font-size: 28px;
@@ -540,5 +490,61 @@
   screen and (min-resolution: 2dppx) {
   .hero-next-btn {
     background-image: url('../images/icons/arrow-right@2x.png');
+  }
+}
+
+.hero-ice-cream {
+  position: absolute;
+
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation-duration: 0.7s;
+  animation-delay: 0.1s;
+
+  @include for-size(mobile-only) {
+    top: 92px;
+    right: calc((100% - 100vw) / 2 + 32px);
+    width: 171px;
+    height: 410px;
+    background-image: url('../images/hero/slider-pic7-mobile.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/hero/slider-pic7-mobile@2x.png');
+    }
+  }
+
+  @include for-size(tablet) {
+    top: 63px;
+    right: 215px;
+    width: 143px;
+    height: 336px;
+    background-image: url('../images/hero/slider-pic7-tablet.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      .hero .container {
+        background-image: url('../images/hero/slider-pic7-tablet@2x.png');
+      }
+    }
+  }
+
+  @include for-size(desktop) {
+    top: 108px;
+    right: 300px;
+    width: 236px;
+    height: 557px;
+    background-image: url('../images/hero/slider-pic7-desktop.png');
+
+    @media screen and (min-device-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      .hero .container {
+        background-image: url('../images/hero/slider-pic7-desktop@2x.png');
+      }
+    }
   }
 }
