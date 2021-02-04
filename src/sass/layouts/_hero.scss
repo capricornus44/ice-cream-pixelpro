@@ -22,6 +22,8 @@
 }
 
 .hero .container {
+  animation-duration: 0.5s;
+
   position: relative;
   @include for-size(tablet) {
     max-width: 768px;
@@ -179,6 +181,9 @@
 }
 
 .hero-title {
+  animation-duration: 2s;
+  animation-delay: 1.5s;
+
   width: 218px;
   margin-bottom: 20px;
 
