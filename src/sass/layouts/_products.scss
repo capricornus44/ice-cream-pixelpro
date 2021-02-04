@@ -71,6 +71,9 @@
   }
 
   @include for-size(tablet) {
+    // &:not(:last-child) {
+    //   margin-right: 20px;
+    // }
     margin-left: 20px;
     // min-width: 220px;
     max-width: calc((100% / 3) - 20px);
@@ -204,16 +207,17 @@
     width: 26px;
     height: 6px;
     bottom: 54%;
-    transform: translateX(50px);
+    left: 50%;
+    transform: translateX(-50%);
 
     @include for-size(tablet) {
       bottom: 56%;
-      transform: translateX(48px);
+      transform: translateX(-50%);
     }
 
     @include for-size(desktop) {
       bottom: 55%;
-      transform: translateX(72px);
+      transform: translateX(-50%);
     }
   }
 }
