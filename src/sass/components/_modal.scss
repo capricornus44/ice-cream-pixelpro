@@ -49,8 +49,8 @@
 
   @include for-size(desktop) {
     width: 40vw;
-    height: 68vh;
-    overflow: hidden;
+    height: 70vh;
+    overflow: scroll;
   }
 }
 
