@@ -342,7 +342,7 @@ body {
 @media screen and (min-width: 768px) {
   .franchise-window {
     width: 50vw;
-    height: 80vh;
+    height: 95vh;
   }
 }
 .franchise-window .button-close {
@@ -769,8 +769,8 @@ body {
 @media screen and (min-width: 1200px) {
   .modal {
     width: 40vw;
-    height: 68vh;
-    overflow: hidden;
+    height: 70vh;
+    overflow: scroll;
   }
 }
 
